@@ -1,0 +1,30 @@
+/**
+ * This is supposed to loop i however many times it needs to
+ * It needs to match the list of numbers given as homework
+ */
+public class SimpleLoop 
+{
+// create main method
+	public static void main(String[] args)
+	{
+		//create method to compute these numbers
+		countSomeNums();
+	}
+/**
+ * this is the method that computes the numbers to make what we need on the list
+ */
+	private static void countSomeNums() 
+	{
+		// TODO Auto-generated method stub
+		//int i should be repeated for as many numbers as listed
+		//therefore, it repeats 6  times
+		for (int i = 1 ; i <= 6 ; i++)
+		{
+			//these numbers make us stretch our brain out like some putty
+			//but eventually, you find the right combination of numbers
+			//think of it as "times the gap between each number"
+			//then "how much of a gap there is between "i * x" and the intended number
+			System.out.println((i * 18) - 22);
+		}
+	}
+}
