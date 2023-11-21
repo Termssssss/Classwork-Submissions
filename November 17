@@ -15,7 +15,6 @@ public class SimpleLoop
  */
 	private static void countSomeNums() 
 	{
-		// TODO Auto-generated method stub
 		//int i should be repeated for as many numbers as listed
 		//therefore, it repeats 6  times
 		for (int i = 1 ; i <= 6 ; i++)
