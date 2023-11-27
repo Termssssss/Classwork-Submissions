@@ -1,0 +1,19 @@
+public class Cake
+{
+  String Flavor = new String(System.in); 
+  int Layers;
+
+  getFlavor(Flavor);
+  getLayer(Layers);
+
+    public static void getFlavor (String Flavor)
+    {
+  
+    }
+
+    public static void getLayer (int Layers)
+    {
+
+    }
+
+}
