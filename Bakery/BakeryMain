@@ -1,0 +1,84 @@
+/**
+ * this is the main class used to 
+ * generate multiple main goods that we will define
+ * the behavior of in their own classes.2
+ * Here, all we'll do is create the baked goods
+ * And maybe print some info
+ */
+public class BakeryMain 
+{
+
+	/**
+	 * Main method is a method that always runs 
+	 * whenever the class is run.
+	 * We don't need to call its name, it just runs
+	 * 
+	 * this is the method where we will instantiate 
+	 * new baked goods and print stuff.
+	 * @param args (idk why this is needed)
+	 */
+	public static void main(String[] args) 
+	{
+		//instantiate first baked good, a pie
+		Pie myFirstPie = new Pie("Key Lime", 8);
+		//testing if the tellYummy method works
+		myFirstPie.tellMeIfYummy();
+		System.out.println(myFirstPie.getFlavor());
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		
+		//initiate another baked good, the father pie
+		Pie fatherPie = new Pie("Chocolate Haupia", 10);
+		//print father flavor
+		System.out.println(fatherPie.getFlavor());
+		
+		//print father slices
+		System.out.println(fatherPie.getSlices());
+	
+		//set and print new father slices
+		fatherPie.setSlices(24);
+		System.out.println(fatherPie.getSlices());
+		
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		//make kid pie equal to father pie
+		Pie kidPie = fatherPie;
+		
+		//print kid flavor
+		System.out.println(kidPie.getFlavor());
+		System.out.println(kidPie.getSlices());
+		
+		Cake myFirstCake = new Cake("Chocolate", 3);
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		
+		//show what flavor the cake is
+		System.out.println("The Cake is " + myFirstCake.getFlavor() + " flavored.");
+		
+		//show how many layers the cake has
+		System.out.println("The Cake has " + myFirstCake.getLayers() + " layers.");
+	
+		//is my cake tasty?
+		myFirstCake.tellMeIfTasty();
+		
+		//change the flavor around
+		myFirstCake.setFlavor("Vanilla");
+		
+		//see if I properly changed the flavor around
+		System.out.println("The Cake is " + myFirstCake.getFlavor() + " flavored");
+		
+		//add a layer to the cake
+		myFirstCake.incLayer();
+		
+		//see if I properly put another layer on the cake
+		System.out.println("The Cake has " + myFirstCake.getLayers() + " layers.");
+		
+		//compliment yourself :)
+		System.out.println("The Cake is still indeed yummy.");
+	}
+}
