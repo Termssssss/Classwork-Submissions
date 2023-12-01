@@ -1,0 +1,88 @@
+/**
+ * This layer is supposed to hold all the functionalities of a cake
+ * It not only has the flavor, but it also has a counter 
+ * for the amount of layers on the cake
+ */		
+public class Cake {
+
+	
+	//flavor of cake
+	String flavor = new String("");
+	//amount of layers in cake
+	int layers;
+	
+	/**
+	 * this is to make place holders for the flavor and layers
+	 * just in case something goes wrong, I guess
+	 * @param f is the flavor
+	 * @param l are the layers
+	 */
+	public Cake(String f, int l) 
+	{
+		// TODO Auto-generated constructor stub
+		//make place holders for flavor and layers
+		this.flavor = f;
+		this.layers = l;
+	}
+	
+	/**
+	 * this method is supposed to return the flavor
+	 * to the main bakery
+	 * so that our cake can taste good
+	 * @return a flavor that's given
+	 */
+	public String getFlavor() 
+	{
+		// TODO Auto-generated method stub
+		// return a flavor for the cake
+			return this.flavor;
+	}
+	
+	/**
+	 * this is merely just to say if the cake is delicious (it is)
+	 */
+	public void tellMeIfTasty() 
+	{
+		// TODO Auto-generated method stub
+		//compliment yourself :)
+		System.out.println("The Cake is indeed yummy.");
+	}
+	
+	/**
+	 * this method is supposed to return the layers
+	 * to the main bakery
+	 * so that there's enough cake for everyone
+	 * @return an amount of layers that are given
+	 */
+	public int getLayers() 
+	{
+		// TODO Auto-generated method stub
+		//return the amount of layers for the cake	
+		return this.layers;
+		}
+	
+	
+	/**
+	 * for those who don't like my flavor, that's fine!
+	 * I can change it on a whim with this method.
+	 * @param newFlavor to change the flavor
+	 */
+	public void setFlavor(String newFlavor) 
+		// TODO Auto-generated method stub
+		{
+		// change the flavor of the cake	
+		this.flavor = newFlavor;
+		}
+	
+	/**
+	 * for those who want more layers, that's fine!
+	 * I can add more very easily with this method.
+	 */
+	public void incLayer()
+		{
+			// TODO Auto-generated method stub
+		// adds another layer to the cake	
+		this.layers += 1;
+		
+		}
+}
