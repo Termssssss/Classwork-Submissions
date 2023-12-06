@@ -1,0 +1,45 @@
+/**
+ * In this class, I will be trying to multiply without using an asterisk
+ * It's harder than it seems, but maybe that's just me being a big dumdum
+ */
+public class MathStuff {
+
+	/**
+	 * this is just here because eclipse is salty that there's no main
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//establish your ints
+		int x = 4;
+		int y = 8;
+		
+		//establish the controlled int
+		int b = x;
+		
+		//make a method that would multiply two numbers by adding
+		multTwoNums(x, y, b);
+	}
+
+	/**
+	 * This will be the method that ends up multiplying two numbers together.
+	 * I just need to remember that  x * y = x+x+x+...
+	 * @param x
+	 * @param y
+	 */
+	public static void multTwoNums(int x, int y, int b) 
+	{
+		// TODO Auto-generated method stub
+		//here,  the amount of times that x will be added to itself will depend on y
+		//a will be the start of the count-up, and y is the end of it
+		//note to self, if your first x is x + b, then make sure you have one less y in the loop
+		//i <= y = x * (y+1). i < y = x * y
+		for (int i = 1; i < y; i++)
+		{
+		//add x to itself.
+			x += b;
+		}
+		//print out the finished product of the for loop
+		System.out.println(x);
+	}
+}
