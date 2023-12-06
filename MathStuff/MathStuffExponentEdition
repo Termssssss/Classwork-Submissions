@@ -1,0 +1,44 @@
+/**
+ * This class is much like the regular MathStuff, but it's exponents instead of factors
+ * It's easier than it seems, but maybe that's just me copying the other MathStuff for this
+ */
+public class MathStuffExponentEdition 
+{
+	
+	/**
+	 * this is just here because eclipse is salty that there's no main
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//establish your ints
+		int x = 10;
+		int y = 5;
+		
+		//establish a placeholder link
+		int b = x;
+		
+		//make a method that would count up exponents fora number
+		multTwoNums(x, y, b);
+	}
+
+	/**
+	 * This will be the method that ends up multiplying the numbers by itself many times.
+	 * I just need to remember that  x^y = x*x*x* ...
+	 * @param x
+	 * @param y
+	 */
+	public static void multTwoNums(int x, int y, int b) 
+	{
+		// TODO Auto-generated method stub
+		//here,  the amount of times that x will be multiplied by itself will depend on y
+		//a will be the start of the count-up, and y is the end of it
+		for (int i = 1; i < y; i++)
+		{
+		//multiply x by itself using a placeholder
+			x = b * x;
+		}
+		//print out the finished product of the for loop
+		System.out.println(x);
+	}
+}
