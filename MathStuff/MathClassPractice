@@ -1,0 +1,49 @@
+public class MathClassPractice {
+
+	//java.lang
+	
+	//"java quick reference library" will show up a lot in the AP final test
+	//java quick reference library refers to all the libraries/APIs that come with Java
+	//includes things like  String lass, Scanner class, and what we're learning today, the Math Class
+	
+	public static void main(String[] args)
+	{
+		
+		//declare two numbers to test Math methods on
+		
+		int myInt = -4;
+		double myDub = -16.0;
+		
+		//test the sqrt method. itshould find the square root
+		double dubSqrt = Math.sqrt(myDub);
+		System.out.println(dubSqrt);
+		
+		//it comes  out NaN. So try the abs method, it should hopefully work then
+		double dubAbs = Math.abs(myDub);
+		System.out.println(dubAbs);
+		double intAbs = Math.abs(myInt);
+		System.out.println(intAbs);
+		
+		//much better. Now what if we find the square root of myAbs
+		System.out.println(Math.sqrt(dubAbs));
+		
+		//now, test the pow method, which raises a base (first number) to the power of the exponent (second number)
+		//not without ints, of course
+		int base = 2;
+		int exponent = 5;
+		
+		//multiply the base by itself by the amount of times the exponent says
+		double prod = Math.pow(base, exponent);
+		
+		//print
+		System.out.println(prod);
+		
+		//now print a random number between 1-10, inclusive
+		//wait, what?
+		int min = 1;
+		int max = 10;
+		double rng = Math.random();
+		System.out.println(rng);
+    //??????
+	}
+}
