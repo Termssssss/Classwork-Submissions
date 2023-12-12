@@ -1,0 +1,300 @@
+/**
+ * this class has no particular thing it needs to do 
+ * it's just needed for me to figure out how these tasks work
+ */
+public class MathTasks {
+
+	/**
+	 * the main method so we can contain everything safely
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		
+		//TASK 1: create a random number generator
+		//wait, how?
+		
+				//uh... start with making the minimum and maximum
+				int min = 1;
+				int max = 10;
+				
+				//to explain this... we make all the random numbers ints instead of doubles, 
+				//multiply the 0 to 1 of math.random by the max and the min + 1 to make the max of the random
+				//and then the + min is to set the minimum of the rng, I think
+				// source of code: https://ioflood.com/blog/math-random-java/#:~:text=While%20Math.,start%20value%20of%20the%20range.
+				int Rando = (int)(Math.random() * (max - min + 1)) + min;
+				System.out.println(Rando);
+
+		//TASK 2: declare ints
+		int intA = -36;
+		int intB =  12;
+		
+		//TASK 3: declare doubles 
+		double dubA = -100.0;
+		double dubB = 0.64;
+		
+		//TASK 4: make integer objects with same values as int counterparts
+		Integer integerA = -36;
+		Integer integerB =  12;
+		
+		//TASK 5: make Double objects with same values as double counterparts
+		Double doubleA = -100.0;
+		Double doubleB = 0.64;
+		
+		//this is for TASK 6, as if it were to be put with the TASK, a logical error of placement would occur
+		int b = intA;	
+		multTwoInts(intA, intB, b);
+		
+		//this is for TASK 7 as a method was already stated, and stating ints under methods are incomprehensible
+		int c = integerA;	
+		multTwoIntegers(integerA, integerB, c);
+		
+		//this is for TASK 8 as a method was already stated, and stating doubles under methods are incomprehensible
+		double d = dubA;	
+		multTwoDubs(dubA, dubB, d);
+		
+		//this is for TASK 9 as a method was already stated, and stating Doubles under methods are incomprehensible
+		double e = doubleA;	
+		multTwoDoubles(doubleA, doubleB, e);
+		
+		//this is for TASK 10 just to make it easier for me
+		printAbs(intA, integerA, dubA, doubleB);
+		
+		//this is for TASK 11 just to make it easier for me
+		printSqrtdB(dubB, doubleB);
+		
+		//this is for TASK 12 just to make it easier for me
+		printSqrtiA(intA, integerA);
+		
+		//this is for TASK 13 as a method was already stated, and stating doubles under methods are incomprehensible
+				prodTwoDubs(dubA, dubB);
+		
+		//this is for TASK 14 as a method was already stated, and stating an int and a double under methods are incomprehensible
+				prodIntNDub(intB, dubA);
+				
+		//this is for TASK 15 as a method was already stated, and stating a double and an int under methods are incomprehensible
+				prodDubNInt(dubB, intA);
+		
+			}
+	
+		//TASK 6: make method where one int is raised to the power of the other int
+
+			/**
+			 * This will be the method that ends up multiplying the numbers by itself many times.
+			 * I just need to remember that  x^y = x*x*x* ...
+			 * @param x
+			 * @param y
+			 */
+			public static void multTwoInts(int intA, int intB, int b) 
+			{
+				// TODO Auto-generated method stub
+				//here,  the amount of times that x will be multiplied by itself will depend on y
+				//a will be the start of the count-up, and y is the end of it
+				for (int i = 1; i < intB; i++)
+				{
+				//multiply x by itself using a placeholder
+					intA = b * intA;
+				}
+				//print out the finished product of the for loop
+				System.out.println(intA);
+			}
+			
+			//TASK 7: make method where one Integer is raised to the power of the other Integer
+			//but first, copy and paste the previous task, then make an int before TASK 6
+
+				/**
+				 * This will be the method that ends up multiplying the numbers by itself many times.
+				 * I just need to remember that  x^y = x*x*x* ...
+				 * @param x
+				 * @param y
+				 */
+				public static void multTwoIntegers(Integer integerA, Integer integerB, int c) 
+				{
+					// TODO Auto-generated method stub
+					//here,  the amount of times that x will be multiplied by itself will depend on y
+					//a will be the start of the count-up, and y is the end of it
+					for (int i = 1; i < integerB; i++)
+					{
+					//multiply x by itself using a placeholder
+						integerA = c * integerA;
+					}
+					//print out the finished product of the for loop
+					System.out.println(integerA);
+				}
+			
+			//TASK 8: make method where one double is raised to the power of the other double
+				//I guess it's supposed to make a logical error?
+			//but first, copy and paste the previous task, then make an double before TASK 6
+
+				/**
+				 * This will be the method that ends up multiplying the numbers by itself many times.
+				 * I just need to remember that  x^y = x*x*x* ...
+				 * @param x
+				 * @param y
+				 */
+				public static void multTwoDubs(double dubA, double dubB, double d) 
+				{
+					// TODO Auto-generated method stub
+					//here,  the amount of times that x will be multiplied by itself will depend on y
+					//a will be the start of the count-up, and y is the end of it
+					for (double i = 1; i < dubB; i++)
+					{
+					//multiply x by itself using a placeholder
+						dubA = d * dubA;
+					}
+					//print out the finished product of the for loop
+					System.out.println(dubA);
+				}
+			
+			//TASK 9: make method where one Double is raised to the power of the other Double 
+				//I guess it's supposed to make a logical error?
+			//but first, copy and paste the previous task, then make an Double before TASK 6
+
+				/**
+				 * This will be the method that ends up multiplying the numbers by itself many times.
+				 * I just need to remember that  x^y = x*x*x* ...
+				 * @param x
+				 * @param y
+				 */
+				public static void multTwoDoubles(Double doubleA, Double doubleB, double e) 
+				{
+					// TODO Auto-generated method stub
+					//here,  the amount of times that x will be multiplied by itself will depend on y
+					//a will be the start of the count-up, and y is the end of it
+						for (double i = 1; i < doubleB; i++)
+						{
+						//multiply x by itself using a placeholder
+							doubleA = e * doubleA;
+						}
+						//print out the finished product of the for loop
+						System.out.println(doubleA);
+				}
+				
+			//TASK 10: Print out absolute value of intA, intB, IntegerA, and IntegerB
+			
+				/**
+				 * This would print out the absolute value
+				 * the absolute value is how much a number, positive or negative, is less than zero
+				 * the number always ends up as a positive number because it's a distance 
+				 * negative distance doesn't exist
+				 * @param intA
+				 * @param integerA
+				 * @param dubA
+				 * @param doubleB
+				 */
+				public static void printAbs(int intA, Integer integerA, double dubA, Double doubleB) 
+				{
+					// TODO Auto-generated method stub
+					//create absolute value values
+					int AbintA = Math.abs(intA);
+					int AbintegerA = Math.abs(integerA);
+					double AbdubA = Math.abs(dubA);
+					double AbdoubleB = Math.abs(doubleB);
+					
+					//print absolute value values out
+					System.out.println(AbintA);
+					System.out.println(AbintegerA);
+					System.out.println(AbdubA);
+					System.out.println(AbdoubleB);
+				}
+				
+			//TASK 11: Print Square Root of dubB and doubleB
+
+				/**
+				 * this method is supposed to print the square root of the two doubles
+				 * both a primitive and a complex code line
+				 * @param dubB
+				 * @param doubleB
+				 */
+				public static void printSqrtdB(double dubB, Double doubleB) 
+			// TODO Auto-generated method stub
+				{
+					//create square root values
+					double SqrtdubB = Math.sqrt(dubB);
+					double SqrtdoubleB = Math.sqrt(doubleB);
+					
+					//print square root values out
+					System.out.println(SqrtdubB);
+					System.out.println(SqrtdoubleB);
+				}
+				
+			//TASK 12: Print Square Root of absolute value of intA and integerA
+				
+				/**
+				 * this method is supposed to print the square root of the two absolute values of ints
+				 * both a primitive and a complex code line
+				 * @param intA
+				 * @param integerA
+				 */
+				public static void printSqrtiA(int intA, Integer integerA) 
+					// TODO Auto-generated method stub
+				{
+					//create the absolute value values
+					int AbintA = Math.abs(intA);
+					int AbintegerA = Math.abs(integerA);
+					
+					//create square root values of absolute value values
+					//note to self, casts go to before the statement, not in it
+					int SqrtAbintA = (int) Math.sqrt(AbintA);
+					int SqrtAbintegerA = (int) Math.sqrt(AbintegerA);
+					
+					//print square root values out
+					System.out.println(SqrtAbintA);
+					System.out.println(SqrtAbintegerA);
+				}
+				
+			//TASK 13: Print out double raised to the other double
+				/**
+				 * this method is supposed to raise one double to the power of the other double
+				 * @param dubA
+				 * @param dubB
+				 */
+				public static void prodTwoDubs(double dubA, double dubB) 
+					// TODO Auto-generated method stub
+				{
+					//make the prod of the two doubles
+					double Dubprod = Math.pow(dubA, dubB);
+					
+					//print the prod out
+					System.out.println(Dubprod);
+				}
+				
+			//TASK 14: Print out int raised to a double
+				
+				/**
+				 * this method is supposed to raise one int to the power of a double
+				 * @param intB
+				 * @param dubA
+				 */
+				public static void prodIntNDub(int intB, double dubA) 
+					{
+					// TODO Auto-generated method stub
+					
+					//make the prod of the int and dub
+					double IntDubprod = Math.pow(intB, dubA);
+					
+					//print the prod out
+					System.out.println(IntDubprod);
+					}
+				
+			//TASK 15: Print out double raised to an int
+				
+				/**
+				 * this method is supposed to raise the other int to the power of the other double
+				 * @param dubB 
+				 * @param intA
+				 */
+				private static void prodDubNInt(double dubB, int intA) 
+					{
+					// TODO Auto-generated method stub
+					
+					//make the prod of the dub and the int
+					double DubIntprod = Math.pow(dubB, intA);
+					
+					//print the prod out
+					System.out.println(DubIntprod);
+					}
+        //afternote: unboxing is turning a complex type (Integer, Double) into a more complex type of code (int, double)
+        //afternote: autoboxing is turning a primitive type (int, double) int a more complex type of code (Integer, Double)
+        //afternote: their both the same thing as ints and doubles, but these would eventually be needed somewhere
+	}
