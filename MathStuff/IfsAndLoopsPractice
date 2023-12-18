@@ -1,0 +1,155 @@
+import java.util.Scanner;
+
+/**
+ * this class will have us experiment with if-else commands and loop commands
+ * one prints if it's true or false, the other prints something true until it's false
+ */
+public class IfsAndLoopsPractice 
+{
+
+	/**
+	 * this is the main method so that everything works
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+	//TASK 1: Scan in two ints and store them as integers called "x" and "y"
+	
+	Scanner intTaker = new Scanner(System.in);
+	
+	Integer x = intTaker.nextInt();
+	Integer y = intTaker.nextInt();
+	
+	//this is for TASK 3.
+	int b = x;
+	
+	intTaker.close();
+	
+	//TASK 2: Make method named "printEvenOrOdd" and pass it x and y. 
+	//This should print out if one, the other, or both are odd or even
+	printEvenOrOdd(x, y);
+	
+	//space out
+	System.out.println(" ");
+	System.out.println(" ");
+	
+	//TASK 3: Make method named "printExpTable" and pass it x and y
+	//if both numbers are positive, find the exponent. if either are negative, print an error message
+	printExpTable (x, y, b);
+	
+	//space out
+	System.out.println(" ");
+	System.out.println(" ");
+	
+	//TASK 4: Make method named "getFact" and pass it x
+	//This should print out the factorial of x
+	getFact (x);
+	
+	//space out
+	System.out.println(" ");
+	System.out.println(" ");
+	}
+
+	/**
+	 * this is supposed to tell which number is odd, and which one is even
+	 * dividing each number by 2 makes it easier to tell between odd and even
+	 * @param x
+	 * @param y
+	 */
+	public static void printEvenOrOdd(Integer x, Integer y) {
+		// TODO Auto-generated method stub
+		
+		//if the number is divided by 2, and the remainder is 1, the number is odd
+		//if the number is divided by 2, and the remainder is 0, the number is even
+		if ((x % 2) == 1 && (y % 2) == 1)
+		{
+			System.out.println("Both " + x + " and " + y + " are odd");
+		}
+		else if ((x % 2) == 0 && (y % 2) == 1)
+		{
+			System.out.println(x + " is even, but " + y + " is odd.");
+		}
+		else if ((x % 2) == 1 && (y % 2) == 0)
+		{
+			System.out.println(x + " is odd, but " + y + " is even.");
+		}
+		else
+		{
+			System.out.println("Both " + x + " and " + y + " are even");
+		}
+		
+	}
+	
+	/**
+	 * this is supposed to print the exponent of x and y
+	 * it simply multiplies x by itself as many times as y counts
+	 * @param x is bottom number
+	 * @param y is exponent
+	 * @param b is control (unchanging x)
+	 */
+	public static void printExpTable(Integer x, Integer y, int b) 
+	{
+		// TODO Auto-generated method stub
+		
+		// this is to make sure the number is positive, so that we can create easy exponents
+		
+		if (x > 0 && y > 0) 
+		{
+			//cheese the system ( ͡° ͜ʖ ͡°)
+			System.out.println(b + " to the power of 0 is equal to 1");
+			System.out.println(b + " to the power of 1 is equal to " + b);
+			
+			for(int i = 2; i <= y; i += 1)
+			{
+				//multiply x by itself to get the exponent
+				x = x * b;
+			  //print out each step
+        System.out.println(b + " to the power of " + i + " is equal to " + x);
+			}
+		}
+		else
+		{
+			//negative numbers don't make exponents
+			//at least, we can't code them to make exponents
+			System.out.println("Sorry, I can't make exponents out of negative numbers");
+		}
+	}
+	
+	/**
+	 * this is supposed to get a factorial of each number
+	 * 1 is multiplied as many times as x says it needs to be
+	 * it multiplies by 1, then 1 and 2, then 1, 2, and 3, etc.
+	 * @param x the amount of times a factorial is multiplied
+	 */
+	public static void getFact(Integer x) 
+	{
+		// TODO Auto-generated method stub
+		
+		//ok, so I learned this from something else.
+		//what I learned is that m is supposed to hold the number still, kinda like a control
+		//to get the factorial, you multiply m by i, which goes up until it matches x
+		//so it would be m * i, m * (m * i), m * (m * (m * i)), etc.
+		
+		if (x >= 0)
+		{
+			int m = 1;
+			for (int i = 1; i <= x; i++)
+			{
+				//multiply 1 by the amount of times i says
+        int b = m *= i;
+
+        //print out each step
+				System.out.println("The factorial of " + x + " would be " + b);
+			}
+		}
+		
+		//again, we can't code negative numbers to turn into factorials
+		else
+		{
+			System.out.println("Sorry, I can't make factorials out of negative numbers");
+			System.out.println("The factorial will just be " + x);
+		}
+	}
+}	
+
+
