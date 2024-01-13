@@ -1,0 +1,53 @@
+/**
+ * In this class, we're going to figure out how RNG works and how to count specific letters in a larger word
+ */
+public class CountLetters 
+{
+
+	/**
+	 * This is the main method
+	 * @param args
+	 */
+	public static void main(String[] args)
+{
+//TASK 3: count letters or numbers in a word or phrase
+		
+		//create some strings to test this out on
+		String aWord = new String ("supercalifragilisticexpialidocious");
+		char aChar = 'i';
+		
+		//make a method to count the letters
+		//countChars(aWord, aChar);
+		
+		//print out the end product of the method
+		System.out.println("The word \"" + aWord + "\" has " + countChars(aWord, aChar) + " " + aChar + "'s.");
+		
+	}
+
+  /**
+	 * this method is to count how many times a specific letter appears in a word
+	 * @param aWord is the full word
+	 * @param aChar is the character to look for in the word
+	 * @return
+	 */
+	public static int countChars(String aWord, char aChar) 
+	{
+		// TODO Auto-generated method stub
+		
+		//set a count for zero just in case there is none of the letters in the word
+		int count = 0;	
+		
+		//make a loop so it can check every single letter
+		for (int i = 0; i < aWord.length(); i++)
+			{
+			//check if char at current index = aChar
+				if(aWord.charAt(i) == aChar)
+				{
+				//if it does = aChar, add one to the counter	
+					count++;
+				}
+			}
+		//return how many times aChar appears in aWord
+		return count;
+	}
+}
