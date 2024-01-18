@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+/**
+ * This is supposed to give the user a set amount of dice that they ask for
+ * it's also called Pseudocode because we were supposed to write pseudocode to plan this out first
+ * Spoiler: my pseudocode was about as accurate as me playing chess
+ */	
+public class Pseudocode 
+{
+	/**
+	 * this is the main method
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//introduce user
+		System.out.println("Hi! Please type how many dice you'd like with how many sides.");
+		
+		//give examples on what they should do
+		System.out.println("Example: 4d6, 3d8, 10d5, etc");
+		
+		//add in a scanner
+		Scanner Reader = new Scanner(System.in);
+	
+		//add in something so their response can be broken down and 
+		String Dice = new String(Reader.nextLine());
+		
+		//add in something to make the code adjustable to the string
+		int mid = Dice.indexOf('d');
+		
+		//make something that records the number up to the letter "d"
+		String first = Dice.substring(0, mid);
+		
+		////make something that records the number after the letter "d"
+		String last = Dice.substring(mid + 1);
+		
+		//record the first number
+		int a = Integer.valueOf(first);
+		
+		//record the second number
+		int b = Integer.valueOf(last);
+		
+		//add those two numbers together
+		int c = a + b;
+		
+		//repeat to them what they asked for
+		System.out.println("So you're asking for " + a + " dice with " + b + " sides, right?");
+		
+		//add this in for awkward comments
+		System.out.println("Heh, that adds up to " + c + "...");
+		
+		//always remember to close the scanner
+		Reader.close();
+	}
+}
