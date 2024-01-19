@@ -88,7 +88,7 @@ public class DiceRoll
 			//kinda works like DnD and modifiers
 			z += Roll;
 		}
-		//after adding every roll to 0, tell them what their final score is
+		//SUBTASK 4: Print the result
 		System.out.println("Your final score is " + z);
 	}
 }
