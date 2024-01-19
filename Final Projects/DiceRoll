@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * This is supposed to give the user a set amount of dice that they ask for
- * it's also called Pseudocode because we were supposed to write pseudocode to plan this out first
+ * it was called Pseudocode because we were supposed to write pseudocode to plan this out first
  * Spoiler: my pseudocode was about as accurate as me playing chess
  */	
 public class DiceRoll 
