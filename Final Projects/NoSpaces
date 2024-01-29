@@ -1,0 +1,90 @@
+/**
+ * This is a class where we're supposed to remove the spaces
+ * knowing what I know, it uses quite a few loops, but it gets the job done
+ */
+public class NoSpaces 
+{
+
+	/**
+	 * this is the main method
+	 * @param args
+	 */
+	public static void main (String[] args)
+	{
+		String str = new String("Edw a rd");
+		char Space = ' ';
+		
+		//create method to count amount of spaces
+		//countSpaces(str, Space);
+		
+		//make method to remove spaces
+		//removeSpaces(str, Space, counted);
+		
+		//print out the string with no spaces
+		System.out.println(removeSpaces(str, Space));
+	}
+
+	/**
+	 * this is supposed to count how many spaces there are 
+	 * @param str is the string
+	 * @param Space is the spaces to count
+	 * @return
+	 */
+	public static int countSpaces(String str, char Space) 
+	{
+		// TODO Auto-generated method stub
+		
+		int count = 0;
+		//set a count for zero just in case there is none of the letters in the word
+		
+		//make a loop so it can check every single letter
+		for (int i = 0; i < str.length(); i++)
+			{
+			//check if char at current index = Space
+				if(str.charAt(i) == Space)
+				{
+				//if it does = Space, add one to the counter	
+					count++;
+				}
+			}
+		//return how many times Space appears in str
+		return count;
+	}
+	
+	/**
+	 * this is supposed to remove the spaces from the string
+	 * @param str is the string
+	 * @param Space is the spaces to be removed
+	 * @return
+	 */
+	public static String removeSpaces(String str, char Space)
+	{
+		// TODO Auto-generated method stub
+		
+		//create an int to hold the amount of times a method counted the spaces in the String
+		int counted = countSpaces(str, Space);
+
+		//make a loop to repeat as many times as there are spaces
+		for (int i = 0; i < counted; i++) 
+			{
+			
+			
+			//make a string to continue the string after every space that's supposed to be deleted
+			String b = str.substring(str.indexOf(Space) + 1);
+
+			//make the String str whittle down to only be the first word before the spaces 
+			str = str.substring(0, str.indexOf(Space));			
+			
+			
+			
+			//build str to become itself + b. connect the first "word" of the string to the next word
+			//ex input: that was absolutely beautiful
+			//ex output: that --> thatwas --> thatwasabsolutely  --> thatwasabsolutelybeautiful
+			str = str.concat(b);
+				
+			}
+		//return the end of this long fought battle
+		return str;
+		
+	}
+}
