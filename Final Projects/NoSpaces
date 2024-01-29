@@ -14,12 +14,6 @@ public class NoSpaces
 		String str = new String("he ya ll th es es pa ce sa re me ss ed up");
 		char Space = ' ';
 		
-		//create method to count amount of spaces
-		//countSpaces(str, Space);
-		
-		//make method to remove spaces
-		//removeSpaces(str, Space, counted);
-		
 		//print out the string with no spaces
 		System.out.println(removeSpaces(str, Space));
 	}
