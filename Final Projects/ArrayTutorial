@@ -1,0 +1,109 @@
+/**
+ * today we begin to figure out how arrays work.
+ * it will be a whole bunch of numbers dancing around for us
+ */
+public class ArrayTutorial
+{
+
+	/**
+	 * this is the main method. my computer barks if this isn't here
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		
+		//declare an array and an int
+		int[] arr = {2, 4, 6, 8, 10, 12};
+		int n =  3;
+		
+		//make a method to give first and last elements of the array
+		System.out.println("giving the first and last array:");
+		giveFirstAndLastArray(arr);
+				
+		//create a method that states what the first and last element is, and then change them both to 1
+		System.out.println(" ");
+		System.out.println("making the first and last letter 1:");
+		printAndChangeFirstLast(arr);
+		
+		//copy a method to give the new first and last elements of the array
+		System.out.println(" ");
+		System.out.println("giving the first and last array, again:");
+		giveFirstAndLastArray(arr);
+				
+		//make a method to divide one of the elements in 2
+		divideElementByTwo(arr, n);
+		
+		System.out.println(" ");
+		System.out.println("dividing an array by 2:");
+		System.out.println("the new array  would be {" + arr[0] + ", " + arr[1] + ", " + arr[2] + ", " + arr[3] + ", " + arr[4] + ", " + arr[5]  + "}.");
+		System.out.println(" ");
+	
+		//make method turn everything into zeros
+		int[] newArr = makeArrayZeros(arr);
+		System.out.println("making everything zeroes:");
+		System.out.println("the new array  would be {" + newArr[0] + ", " + newArr[1] + ", " + newArr[2] + ", " + newArr[3] + ", " + newArr[4] + ", " + newArr[5]  + "}.");
+	}
+
+	/**
+	 * this is to make every int in the array zero
+	 * @param arr
+	 * @return
+	 */
+	public static int[] makeArrayZeros(int[] arr) {
+		// TODO Auto-generated method stub
+	int[] i = arr;
+	
+	for (int l = 0; l  < arr.length; l++)
+	{
+		i[l] = 0;
+	}
+		
+		return i;
+	}
+
+	/**
+	 * this is supposed to declare the first and last elements of the array, 
+	 * and then changes the elements stated to 1
+	 * @param arr
+	 * @return
+	 */
+	public static void printAndChangeFirstLast(int[] arr) 
+	{
+		// TODO Auto-generated method stub
+		
+		//print the two elements
+		System.out.println("your first element is " + arr[0] + ", ");
+		System.out.println("and your last element is " + arr[arr.length - 1]  + ".");
+		
+		//change the first and last elements to 1
+		arr[0] = 1;
+		arr[arr.length - 1] = 1;
+		
+	}
+
+	/**
+	 * this is supposed to divide an element of the array by two
+	 * int and int[] are two different things, btw
+	 * @param arr is the array
+	 * @param n is the element
+	 */
+	public static int[] divideElementByTwo(int[] arr, int n) 
+	{
+		// TODO Auto-generated method stub
+		arr[n] = (arr[n]/2);
+		
+		return arr;
+	}
+	
+	/**
+	 * this method is supposed to give the first and last element of the array
+	 */
+	public static void giveFirstAndLastArray(int[] arr)
+	{
+		int a = arr[0];
+		int b = arr[arr.length-1];
+		System.out.println("the first and last elements are {" + a + ", " + b + "}.");
+	}
+	
+	
+}
