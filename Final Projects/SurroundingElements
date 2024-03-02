@@ -1,0 +1,72 @@
+/**
+ * this class is supposed to show the diversity of an index
+ * to show how one number can change an entire answer
+ */
+public class SurroundingElements 
+{
+	/**
+	 * this is the main method
+	 * my computer blows up if I don't have this		
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//state the boundaries the user should keep in
+		System.out.println("Note: Please only put anything between the index of 1 and 4.");
+		System.out.println("Anything less than 0 and more than 5 will create an error.");
+		
+		//make an array of numbers
+		int[] arr = {1, 5, 3, 9, 42, 17};
+		
+		//make the entitled index to make the number world revolve around him
+		int index = 6;
+		
+		//make the method to make the number world revolve around the index
+		printPrevNextElement(arr, index);
+	}
+
+	/**
+	 * this is the method that helps us to see what's in front and behind the index, 
+	 * along with how they stack up to the index
+	 * @param arr
+	 * @param index
+	 */
+	public static void printPrevNextElement(int[] arr, int index) 
+	{
+		// TODO Auto-generated method stub
+		
+		//make sure the number is between the boundaries
+		if (index > 0 && index < 5)
+		{
+			//statement for if index is bigger than both of the other numbers
+			if (arr[index] > arr[index + 1] && arr[index] > arr[index - 1])
+			{
+				System.out.println("The number at index " + index + " is " + arr[index] + ", which is greater than the number in front of it (" + arr[index + 1] + ") and behind it (" + arr[index - 1] + ").");
+			}
+
+			//statement for if index is bigger than the number in front of it but not behind it
+			else if (arr[index] > arr[index + 1] && arr[index] < arr[index - 1])
+			{
+				System.out.println("The number at index " + index + " is " + arr[index] + ", which is greater than the number in front of it (" + arr[index + 1] + ") but not behind it (" + arr[index - 1] + ").");
+			}
+			
+			//statement for if index is smaller than the number in front of it but not behind it
+			else if (arr[index] < arr[index + 1] && arr[index] > arr[index - 1])
+			{
+				System.out.println("The number at index " + index + " is " + arr[index] + ", which is lesser than the number in front of it (" + arr[index + 1] + ") but not behind it (" + arr[index - 1] + ").");
+			}
+			
+			//statement for if index is smaller than the number in front of it and behind it
+			else if (arr[index] < arr[index + 1] && arr[index] < arr[index - 1])
+			{
+				System.out.println("The number at index " + index + " is " + arr[index] + ", which is lesser than the number in front of it (" + arr[index + 1] + ") and behind it (" + arr[index - 1] + ").");
+			}
+		}
+		
+		//shame them if they don't stay between the boundaries
+		else
+		{
+			System.out.println("Nothing printed out because you didn't stay between our boundaries.");
+		}
+	}
+}
