@@ -1,0 +1,68 @@
+/**
+ * This is the class where we'll add an array's elements together
+ * As well as make a pattern for another array
+ * This was all done on JDoodle, btw
+ */ 
+public class ArraySumNPatterns
+{
+    /**
+     * this is the main method
+     * my IPad yells at me if I don't add this in
+     */ 
+    public static void main(String args[]) 
+    {
+        //declare arrays
+        double[] Arr = {3.1, 2.1, 8.4};
+        int[] newArr = {0, 4, 8, 9, 10, 13, 19};
+        
+        //name methods for the arrays to be in
+        System.out.println(sumArrElements(Arr));
+        makeEveryOtherOne(newArr);
+    }
+    /**
+     * This is supposed to add the array's elements together
+     * It goes element by element and adds it together
+     */ 
+    public static double sumArrElements(double[] Arr)
+    {
+        //dseclare a control to add everything together
+        double c = 0.0;
+        
+        //make a for loop so we could go element by element
+        for(int i = 0; i < Arr.length; i++)
+        {
+            //add the element to the control
+            c = c + Arr[i];
+        }
+        
+        //return the control
+        return c;
+    }
+    
+    /**
+     * this is supposed to make a pattern in an array
+     * it makes every other element in the array a 1
+     */ 
+    public static void makeEveryOtherOne(int[] newArr)
+    {
+        //make a for loop to change every other element into a 1
+        for(int i = 1; i < newArr.length; i += 2)
+        {
+            //change every other element into a 1
+            newArr[i] = 1;
+        }
+        
+        //begin the printout
+        System.out.print("{");
+        
+        //make a loop to make the array print out instead of printing out gibberish
+        for (int j = 0; j < newArr.length - 1; j++)
+        {
+            //make each element print out one by one
+            System.out.print(newArr[j] + ", ");
+        }
+        
+        //print the last element out with a different ending to make it look natural
+        System.out.print(newArr[newArr.length - 1] + "}");
+    }
+}
