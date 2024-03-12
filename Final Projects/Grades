@@ -1,0 +1,62 @@
+/**
+ * creates the grades of a student in a random grade
+ */
+public class Grades 
+{
+	//create the following:
+	
+	//name
+	public String name;
+	
+	//grade level
+	public int gradeLevel;
+	
+	//math grade
+	public double mathGrade;
+	
+	//science grade
+	public double scienceGrade;
+	
+	//theology grade
+	public double theologyGrade;
+	
+	/**
+	 * create this thing to make it more adaptable
+	 * @param a is grade level
+	 * @param b is grade in math
+	 * @param c is grade in science
+	 * @param d is grade in theology
+	 */
+	public Grades(String a, int b, double c, double d, double e)
+	{
+		name = a;
+		gradeLevel = b;
+		mathGrade = c;
+		scienceGrade = d;
+		theologyGrade = e;
+	}
+	
+	public double getGPA()
+	{
+	double G = getGrades();
+	
+	double A = G / 3;
+	
+	return A;
+	}
+	
+	private double getGrades()
+	{
+		double G = mathGrade + scienceGrade + theologyGrade;
+		
+		return G;
+	}
+	
+	
+	public void introduceSelf()
+	{
+		System.out.println("I am a student in grade " + gradeLevel + ". My name is " + name + ".");
+		System.out.println("My average GPA is " + getGPA() + ".");
+	}
+}
+
