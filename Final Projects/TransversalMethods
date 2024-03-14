@@ -1,0 +1,170 @@
+/**
+ * this class is to help us with traversing methods
+ * we will be doing a few different things with arrays
+ */
+public class TraversalMethods 
+{
+	/**
+	 * this is the main method
+	 * my computer blows up if I don't have this
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//make an array of ints and doubles
+		int[] nums = {2, 5, 4, 9, 6, 13, 3};
+		double[] numb = {4.3, 5.1, 8.2, 8.2, 8.2, 1.0, 9.2};
+
+		//declare your methods and print the outcomes
+		System.out.println(getHigh(nums));
+		System.out.println(getAvg(nums));
+		System.out.println(evenElement(nums));
+		System.out.println(allEvenElement(nums));
+		System.out.println(threeInARow(numb));
+	}
+
+	/**
+	 * hehe, funny name
+	 * anyway, this is supposed to get the highest number in the array
+	 * it looks at the current element
+	 * and if it's less than the next element, it drops that element and picks up the other one
+	 * @param nums
+	 * @return
+	 */
+	public static int getHigh(int[] nums) 
+	{
+		//make a traverser
+		int c = 0;
+		
+		//make a loop to look at each numberone by one
+		for (int i = 0; i < nums.length - 1; i++)
+		{
+			//make a boolean to check if one number is bigger than the other
+			if (nums[i] < nums[i + 1])
+			{
+				//replace if it does
+				c = nums[i + 1];
+			}
+			
+			//else, keep the element the same
+			else
+			{
+				c = nums[i];
+			}
+		}
+		//return the highest number
+		return c;
+	}
+	
+	/**
+	 * this is supposed to get the average of an array
+	 * it adds the elements together and divides it by its length
+	 * @param nums
+	 * @return
+	 */
+	public static double getAvg(int[] nums) 
+	{
+		//make a double because I want the result as accurate as possible
+		double c = 0;
+		
+		//do this for the for loop
+		int i = 0;
+		
+		//create a for loop to add everything together
+		for(;i < nums.length; i++)
+		{
+			//add everything one by one
+			c = c + nums[i];
+		}
+		
+		//return the sum divided by the length, which gets the average
+		return (c/nums.length);
+	}
+	
+	/**
+	 * this is supposed to check the array to see if it has any even elements
+	 * if it does, it will return true
+	 * @param nums
+	 * @return
+	 */
+	public static boolean evenElement(int[] nums)
+	{
+		//make a boolean assuming everything is odd
+		boolean hasEven = false;
+		
+		//make a for loop that checks each number
+		for (int i = 0; i < nums.length; i++)
+		{
+			//if any of the numbers are divided by two and have no remainder...
+			if (nums[i] % 2 == 0)
+			{
+				//...it's an even number
+				hasEven = true;
+			}
+		}
+		//return the boolean
+		return hasEven;
+	}
+	
+	/**
+	 * this is supposed to check the array to see if all the elements are even
+	 * if it is, it will return true
+	 * @param nums
+	 * @return
+	 */
+	public static boolean allEvenElement(int[] nums)
+	{
+		//make a boolean assuming anything is odd
+		boolean allEven = false;
+		
+		//make a counter (work with me here)
+		int odd = 0;
+		
+		//make a for loop that looks at each element one by one
+		for (int i = 0;  i < nums.length; i++)
+		{
+			//if any of the elements, when divided by two, have a remainder of 1...
+			if (nums[i] % 2 == 1)
+			{
+				//...add one two the odd counter
+				odd++;
+			}
+		}
+		//if the odd counter didn't go up at all...
+		if (odd == 0)
+		{
+			//...there are no odd numbers, and therefore the boolean is true
+			allEven = true;
+		}
+		//return the boolean
+		return allEven;
+	}
+
+	/**
+	 * this is supposed to print if an array has 3 of the same number
+	 * if it doesn't, it will return false
+	 * @param numb
+	 * @return
+	 */
+	public static boolean threeInARow(double[] numb) 
+	{
+		// make a boolean that automatically assumes numb doesn't have 3 in a row
+		boolean hasThree = false;
+		
+		//make a loop that checks each element, ending on the third to last element
+		for (int i = 0; i < numb.length - 2; i++)
+		{
+			//make the boolean true if it really does have something 3 in a row
+			if(numb[i] == numb[i + 1] && numb[i] == numb [i + 2])
+			{
+				hasThree = true;
+			}
+			
+		}
+		//return the boolean
+		return hasThree;
+	}
+
+	
+}
+
