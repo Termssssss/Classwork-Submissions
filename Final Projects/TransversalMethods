@@ -126,7 +126,7 @@ public class TraversalMethods
 			//if any of the elements, when divided by two, have a remainder of 1...
 			if (nums[i] % 2 == 1)
 			{
-				//...add one two the odd counter
+				//...add one to the odd counter
 				odd++;
 			}
 		}
