@@ -36,7 +36,7 @@ public class TraversalMethods
 		//make a traverser
 		int c = 0;
 		
-		//make a loop to look at each numberone by one
+		//make a loop to look at each number one by one
 		for (int i = 0; i < nums.length - 1; i++)
 		{
 			//make a boolean to check if one number is bigger than the other
