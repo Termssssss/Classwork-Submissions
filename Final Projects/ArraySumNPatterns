@@ -25,7 +25,7 @@ public class ArraySumNPatterns
      */ 
     public static double sumArrElements(double[] Arr)
     {
-        //dseclare a control to add everything together
+        //declare a control to add everything together
         double c = 0.0;
         
         //make a for loop so we could go element by element
