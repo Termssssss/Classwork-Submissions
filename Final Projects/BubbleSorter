@@ -1,0 +1,124 @@
+/**
+ * this is the method where we finally get into the sorting methods
+ * it was funny a few years ago, but now it's educational
+ */
+public class BubbleSorter 	
+{
+	/**
+	 * this is the main method
+	 * my computer explodes if I don't have this
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//create an array
+		int[] q = makeRandom();
+		
+		//specify that this is the unsorted array
+		System.out.print("Unsorted: ");
+		
+		//print the control array
+		printElements(q);
+		
+		//put the array through a bubble sort
+		bubbleSort(q);
+		
+		//specify that this is the sorted array
+		System.out.print("Sorted: ");
+		
+		//print the bubble sorted array out next
+		printElements(bubbleSort(q));
+	}
+
+	/**
+	 * this is the real meat of the whole method: the bubble sort
+	 * this looks at the current element and the next one to make a
+	 * decision on who to put first 
+	 * @param q
+	 * @return
+	 */
+	public static int[] bubbleSort(int[] q) 
+	{
+		//determine a transeverser to return to print out next
+		int[] k = q;
+		
+		//do this method as many times as there are elements in the array
+		//just to be safe, y'know?
+		for (int h = 0; h < q.length; h++)
+		{
+			//look at every single element at a time for this
+			for (int i = 0; i < q.length - 1; i++)
+			{
+				//if the current element is greater than the one next to it...
+				if (k[i] > k[i + 1])
+				{
+					//...make a placeholder,
+					int v = k[i];
+					
+					//turn the current element into the element in front of it (which is the lesser of), 
+					k[i] = k[i + 1];
+					
+					//and turn the element in front into the placeholder  (which is the greater of).
+					k[i + 1] = v;
+				}
+			}
+		}
+		
+		//return the newly sorted array
+		return k;
+	}
+
+	/**
+	 * this is supposed to go element by element to 
+	 * print out the entire array in style
+	 * instead of gibberish
+	 * @param q
+	 */
+	public static void printElements(int[] q) 
+	{
+		//start the array off
+		System.out.print("{");
+		
+		//look at every single element one by one for this
+		for (int i = 0; i < q.length - 1; i++)
+		{
+			//print out the current element, followed by a comma
+			System.out.print(q[i] + ", ");
+		}
+		//finishyour array off with the last element, followed by a bracket
+		System.out.print(q[q.length - 1]);
+		System.out.println("}");
+		
+		//space it out for any other potential arrays
+		System.out.println(" ");
+	}
+	
+	/**	
+	 * this is supposed to make a random method that we're gonna end up sorting out
+	 * @return
+	 */
+	public static int[] makeRandom() 
+	{
+		
+		//make an empty array with 2000 blank (0) elements
+		int[] bigNums = new int[2000];
+		
+		//state the length of the array for what happens next
+		int len = bigNums.length;
+		
+		//make a for loop that looks at every single elements at a time
+		for (int i = 0; i < len; i++)
+		{
+			//make  this int a number between 1 and 1000
+			int randomNumber = (int) ((Math.random() * 1000) + 1);
+			
+			//make the current array the generated number between 1 and 1000
+			bigNums[i] = randomNumber;
+			
+		}
+		
+		//return the newly generated array
+		return bigNums;
+		
+	}
+}
