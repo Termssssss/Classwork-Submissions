@@ -1,0 +1,215 @@
+/**
+ * this is the class that homes the insertion sort
+ * this is supposed to take a number that's out of order and make it go 
+ * backwards until it finds the correct position  
+ */
+public class InsertionSort 
+{
+
+	/**
+	 * this is the main method
+	 * my computer explodes if I don't have this
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//make the different arrays (and int) that will be used for today's lesson
+		int[] smallArray = {1, 3, 7, 9, 11, 13, 5};
+		int[] smallishArray = {2, 4, 8, 10, 12, 6, 14, 16};
+		int element = 5;
+		int[] bigArray = {5, 0, 2, 4, 10, 23, 1, 6};
+		
+		//TASK 1: make an arrayShifter that shifts an element in the array to the correct position
+		arrayShifter(smallArray);
+		System.out.println(" ");
+		
+		//TASK 2: make an arrayShift that shifts an element in (int element)'s position to the correct position
+		arrayShift(smallishArray, element);
+		System.out.println(" ");
+		
+		//TASK 3: make an insertionSort that performs the programmed insertion sort
+		insertionSort(bigArray);
+		
+	}
+
+	/**
+	 * this is the insertion sort
+	 * we're supposed to take each element and shift it to the right position
+	 * one element at a time
+	 * @param arr
+	 */
+	public static void insertionSort(int[] arr) 
+	{
+		// TODO Auto-generated method stub
+		
+		//make a for loop that looks through every element one by one
+		for (int m = 0; m < arr.length; m++)
+		{
+			//print out the current element and a space to print out the array one by one
+			System.out.print(arr[m] + " ");
+		}
+		
+		//differentiate the arrays
+		System.out.println(" ");
+		
+		//make a for loop that repeats itself as many times as there are elements in the array
+		//just to be sure
+		for (int i = 1; i < arr.length; i++)
+		{
+			//traverse the i into the while loop
+			int ele = i;
+			
+			//this loops  until it can't any more (when int ele is 1)
+			while (arr[ele] < arr[ele - 1] && ele > 1)
+			{
+				//make a placeholder to switch
+				int switches = arr[ele - 1];
+				
+				//turn the element before the selected element into the selected element
+				arr[ele - 1] = arr[ele];
+				
+				//turn the selected element into the placeholder
+				arr[ele] = switches;
+				
+				//count the ele down to check the next time
+				ele--;
+			}
+		}
+		
+		//now the first element apparently didn't go with the rest of the sort,
+		//so we just do the first element separately
+		int firstEle = 0;
+		
+		//if the first element really is bigger than the element next to it 
+		//(which means that it can actually run)...
+		if (arr[firstEle] > arr[firstEle + 1])
+		{
+			//do the entire thing that we did for the rest of the elements
+			//but for the first element this time
+			while (arr[firstEle] > arr[firstEle + 1] && firstEle < arr.length - 1)
+			{
+				//placeholder
+				int switcharoo = arr[firstEle];
+		
+				//switch element with element next to it
+				arr[firstEle] = arr[firstEle + 1];
+				arr[firstEle + 1] = switcharoo;
+			
+				//check the next element if this needs to run again
+				firstEle++;
+			}
+		}
+		
+		//make a for loop that looks through every element one by one
+				for (int m = 0; m < arr.length; m++)
+				{
+					//print out the current element and a space to print out the array one by one
+					System.out.print(arr[m] + " ");
+				}
+				
+				//differentiate the arrays
+				System.out.println(" ");
+		
+	}
+
+	/**
+	 * this is supposed to specify which element is out of place,
+	 * and it moves the specified element to where it's supposed to be
+	 * @param arr
+	 * @param ele
+	 */
+	public static void arrayShift(int[] arr, int ele) 
+	{
+		// TODO Auto-generated method stub
+		//make a for loop that looks through every element one by one
+				for (int m = 0; m < arr.length; m++)
+				{
+					//print out the current element and a space to print out the array one by one
+					System.out.print(arr[m] + " ");
+				}
+				
+				//differentiate the arrays
+				System.out.println(" ");
+		
+				//traverse ele into the while loop
+				int i = ele;
+		
+				//while the selected element is worth less that the one behind it 
+				//and i is more than 0...
+		while (arr[i] < arr[i - 1] && i > 0)
+		{
+			//placeholder
+			int switched = arr[i - 1];
+			
+			//turn one into the other
+			arr[i - 1] = arr[i];
+			
+			//turn the other into a placeholder
+			arr[i] = switched;
+			
+			//increment down
+			i--;
+		}
+		
+		//make a for loop that looks through every element one by one
+				for (int m = 0; m < arr.length; m++)
+				{
+					//print out the current element and a space to print out the array one by one
+					System.out.print(arr[m] + " ");
+				}
+				
+				//differentiate the arrays
+				System.out.println(" ");
+	}
+
+	/**
+	 * this is supposed to spot the out of place element at the end of the array
+	 * and it moves the out of place element to where it was supposed to be
+	 */
+	public static void arrayShifter(int[] arr) 
+	{
+		// TODO Auto-generated method stub
+		
+		//put a number to determine where the out of place element
+		int i = arr.length - 1;
+		
+		//make a for loop that looks through every element one by one
+				for (int m = 0; m < arr.length; m++)
+				{
+					//print out the current element and a space to print out the array one by one
+					System.out.print(arr[m] + " ");
+				}
+				
+				//differentiate the arrays
+				System.out.println(" ");
+		
+				//make a while loop that shifts an element back 
+				//every time it's more than the one before it
+				while (arr[i] < arr[i - 1] && i > 0)
+			{
+			
+					//placeholder
+					int switching = arr[i - 1];
+					
+					//turn one into the other
+					arr[i - 1] = arr[i];
+					
+					//turn the other into the placeholder
+					arr[i] = switching;
+					
+					//increment down
+					i--;
+			}
+		
+			//make a for loop that looks through every element one by one
+			for (int m = 0; m < arr.length; m++)
+			{
+				//print out the current element and a space to print out the array one by one
+				System.out.print(arr[m] + " ");
+			}
+			
+			//differentiate the arrays
+			System.out.println(" ");
+		
+	}
+}
