@@ -1,0 +1,47 @@
+//import the Arraylist for us to learn
+import java.util.ArrayList;
+
+/**
+ * today we'll figure out how easy an array list is to make
+ * apparently it works more like a substring than a regular array
+ */
+public class ArrayListPractice 
+{
+
+	/**
+	 * this is the main method
+	 * my computer explodes if I don't have this
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//TASK 1: make an empty array list to learn everything new
+		ArrayList<String> studentNames = new ArrayList<String>();
+		
+		//TASK2: add student names into the array list
+		studentNames.add("Alice");
+		studentNames.add("Charlie");
+		studentNames.add("David");
+		studentNames.add("Elizabeth");
+		studentNames.add("Fieri");
+		studentNames.add("Gwen");
+		System.out.println(studentNames);
+		
+		
+		//TASK 3: add a new student Brittany after Alice
+		studentNames.add(1, "Brittany");
+		System.out.println(studentNames);
+		
+		//TASK 4: Charlie got expelled. Remove him from the list.
+		studentNames.remove(2);
+		System.out.println(studentNames);
+		
+		//TASK 5: I'm sorry, who was student number 2 again?
+		System.out.println(studentNames.get(2));
+		
+		//TASK 6: Elizabeth changed her name to Evan. Change her name in the list.
+		studentNames.set(3, "Evan");
+		System.out.println(studentNames);
+	}
+	
+}
