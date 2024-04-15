@@ -1,0 +1,60 @@
+//import the Array List for us to use
+import java.util.ArrayList;
+
+/**
+ * this is nothing more than looking more into array lists
+ */
+public class ArrayListMethodsInDepth 
+{
+	/**
+	 * this is the main method
+	 * my computer explodes  if I don't have this
+	 * @param args
+	 */
+	public static void  main(String[] args)
+	{
+		//make an array list
+		ArrayList<String> foods= new ArrayList<String>();
+		
+		//add elements to the array list
+		foods.add("Apple");
+		foods.add("Bread");
+		foods.add("Cookies");
+		
+		//TASK 1: print the length of the array list
+		System.out.println(foods.size());
+		
+		//TASK 2: in a print statement, add the string "Dole Whip"  to the array list
+		//comment what happens: the add method is a boolean, and it prints out "true" because it's an addition
+		//what the method does: adds a mentioned element to the array list
+		//what it returns: the original array list plus the new element at the end of it
+		System.out.println(foods.add("Dole Whip"));
+		
+		//print the length of the array list again
+		System.out.println(foods.size());
+		
+		//TASK 3: in a print statement, change "bread" to "butter"
+		//comment what happens: it prints out "bread," which is what the element was before it was changed to "butter"
+		//what the method does: it changes an element in the array list from what it was to what is mentioned
+		//what it returns: the original array list, but with the element in the specified position changed to the newly mentioned element
+		System.out.println(foods.set(1, "Butter"));
+		
+		//print the length of the array list again
+		System.out.println(foods.size());
+		
+		//TASK 4: in a print statement, remove "cookies" from the array list
+		//comment what happens: it prints out "cookies," which is what the element was before it was removed
+		//what the method does: it removes an element from the array list in the specified area
+		//what it returns: the array list except for the one element in the specified area
+		System.out.println(foods.remove(2));
+		
+		//print the length of the array list again
+		System.out.println(foods.size());
+				
+		//by what I gathered, it prints the element that's mentioned 
+		//in the int before it does any of the commands that it receives
+		
+		//TASK 5: go back and comment what the method you're calling does, and what it returns
+	}
+	
+}
