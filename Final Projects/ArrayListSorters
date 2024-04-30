@@ -1,0 +1,64 @@
+//import the array list tool for this class
+import java.util.ArrayList;
+
+/**
+ * this class is where we learn how to bubble sort with array lists rather than regular arrays
+ */
+public class ArrayListSorters 
+{
+	/**
+	 * this is the main method
+	 * my computer explodes if this isn't here
+	 * @param args
+	 */
+	public static void main (String[] args)
+	{
+		
+		//TASK 1: Make two array lists, one with Integers, and one with Strings
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		ArrayList<String> names = new ArrayList<String>();
+		
+		//fill them with 5 unsorted elements
+		nums.add(1);
+		nums.add(5);
+		nums.add(3);
+		nums.add(2);
+		nums.add(4);
+		
+		//each
+		names.add("John");
+		names.add("Gabe");
+		names.add("Patrick");
+		names.add("Katelyn");
+		names.add("Ava");
+		
+		//TASK 2: create a void method that bubble sorts everything in the unsorted Integer array list
+		bubbleSortNumbers(nums);
+		
+	}
+
+	/**
+	 * this is just like the bubble sort method for regular arrays
+	 * this time, though, it uses the things from the array list tool in java.lang
+	 * @param nums
+	 */
+	public static void bubbleSortNumbers(ArrayList<Integer> nums) 
+	{
+		// TODO Auto-generated method stub
+		
+		//make a for loop to repeat the sorting method multiple times
+		for(int i = 0; i < nums.size() - 1; i++)
+		{
+			//if the selected element is bigger than the element after it...
+			if (nums.get(i) > nums.get(i + 1))
+			{
+				//make a place holder and switch the elements
+				Integer place = nums.set(i,  nums.get(i + 1));
+				nums.set(i + 1, place);
+			}
+		}
+		//print the sorted array list
+		System.out.println(nums);
+	}
+
+}
