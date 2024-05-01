@@ -35,6 +35,35 @@ public class ArrayListSorters
 		//TASK 2: create a void method that bubble sorts everything in the unsorted Integer array list
 		bubbleSortNumbers(nums);
 		
+		//TASK 3: create a void method that bubble sorts everything in the unsorted String array list
+		bubbleSortNames(names);
+	}
+
+	/**
+	 * this is the method where we bubble sort a bunch of names
+	 * this is how we learn things for strings in array lists
+	 * @param names
+	 */
+	public static void bubbleSortNames(ArrayList<String> names) 
+	{
+		// TODO Auto-generated method stub
+		//make a loop to repear the sorting method multiple times
+		for(int i = 0; i < names.size(); i++)
+		{
+			//make a for loop to look at every element at a time
+			for (int k = 0; k < names.size() - 1; k++)
+			{
+				//if the selected element is later alphabetically than the element after it...
+				if (names.get(k + 1).compareTo(names.get(k)) < 0)
+				{
+					//make a place holder and switch the elements
+					String holder = names.set(k, names.get(k + 1));
+					names.set(k + 1, holder);
+				}
+			}
+		}
+		//print  the sorted array
+		System.out.println(names);
 	}
 
 	/**
@@ -49,12 +78,16 @@ public class ArrayListSorters
 		//make a for loop to repeat the sorting method multiple times
 		for(int i = 0; i < nums.size() - 1; i++)
 		{
-			//if the selected element is bigger than the element after it...
-			if (nums.get(i) > nums.get(i + 1))
+			//make a for loop to look at every element at a time
+			for (int k = 0; k < nums.size() - 1; k++)
 			{
-				//make a place holder and switch the elements
-				Integer place = nums.set(i,  nums.get(i + 1));
-				nums.set(i + 1, place);
+				//if the selected element is bigger than the element after it...
+				if (nums.get(k) > nums.get(k + 1))
+				{
+					//make a place holder and switch the elements
+					Integer place = nums.set(k, nums.get(k + 1));
+					nums.set(k + 1, place);
+				}
 			}
 		}
 		//print the sorted array list
