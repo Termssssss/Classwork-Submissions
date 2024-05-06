@@ -1,0 +1,91 @@
+/**
+ * in this class we will learn how to print out elements within elements of a 2D array
+ * it is indeed very specific
+ */
+public class TwoDArrayTraversal 
+{
+	/**
+	 * this is the main method
+	 * my computer blows up if this isn't here
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//TASK 1: Declare an Array of Strings with 7 rows and 6 columns
+		String[][] names = {{"Sam", "Abby", "Jasmine", "Kylee", "Adriana", "Shelby"},
+							 {"Jarrin", "Risha", "Zhane", "Hayden", "Candace", "Jayden C."},
+							 {"Kalani", "Tayten", "Sawyer", "Michelle", "Angello", "Kiana"},
+							 {"Jaycee", "Michael", "Kennedy", "Christian", "Jubilee", "Kylie"},
+							 {"Tyler", "Vaughn", "Gabrielle", "Leahmae", "Ian H.", "Kiana"},
+							 {"Jorrin", "Paige I.", "Nua", "Carl", "Kai", "Ari"},
+							 {"Arabella", "Mikayla", "Miya", "Kyla", "Keana", "Shalei"}};
+		
+		//TASK 2: Print the first  element of each array in the array (lmao)
+		System.out.println(names[0][0]);	
+		System.out.println(names[1][0]);	
+		System.out.println(names[2][0]);	
+		System.out.println(names[3][0]);	
+		System.out.println(names[4][0]);	
+		System.out.println(names[5][0]);	
+		System.out.println(names[6][0]);
+		
+		//space out
+		System.out.println("");	
+		
+		//TASK: Repeat TASK 2, but with a loop
+		for (int i = 0; i < names.length; i++)
+		{
+			//print the first element of the current array in the array (lmao)
+			System.out.println(names[i][0]);
+		}
+		
+		//space out
+		System.out.println("");	
+		
+		//TASK 4: Print all the elements of the first array in the array (lmao)
+		System.out.println(names[0][0]);	
+		System.out.println(names[0][1]);	
+		System.out.println(names[0][2]);	
+		System.out.println(names[0][3]);	
+		System.out.println(names[0][4]);	
+		System.out.println(names[0][5]);		
+		
+		//space out
+		System.out.println("");	
+		
+		//TASK 5: Repeat TASK 4, but with a loop
+		for (int k = 0; k < names[0].length; k++)
+		{
+			//print out current element in the first array in the array (lmao)
+			System.out.println(names[0][k]);
+		}
+		
+		//space out
+		System.out.println("");	
+		
+		//TASK 6: Copy the loop from TASK 3, 
+		// then modify it to print every element in the array in the array (lmao)
+		//rather than every first element in the array in the array (lmao)
+		
+		//group together
+		System.out.println("{");
+		
+		//look through every row
+		for (int l = 0; l < names.length; l++)
+		{
+			//look through every element in the current array
+			for (int p = 0; p < names[l].length; p++)
+			{
+				//print out the current element in the current array in the array (lmao)
+				System.out.println(names[l][p]);
+			}
+			//differentiate row with a comma
+			System.out.println(",");
+		
+			//space out
+			System.out.println("");	
+		}
+		//close the grouping together bracket
+		System.out.println("}");
+	}
+}
