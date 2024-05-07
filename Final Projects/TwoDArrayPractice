@@ -1,0 +1,116 @@
+/**
+ * this is for more practice with 2d arrays 
+ * this is how I get to know more about how to print elements in elements (lmao) in arrays
+ */
+public class TwoDArrayPractice 
+{
+
+	/**
+	 * this is the main element
+	 * my computer explodes if I don't have it
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
+		//make a string 2d array for a future task
+		String[][] names = {{"a", "quick", "and", "exuberant", "cat"},
+							{"some", "small", "and", "angry", "dog"},
+							{"that", "dopey", "and", "silly", "bird"}};
+		
+		//make a double 2d array for a future task
+		double[][] nums = {{0.0, 0.2, 0.4, 0.6, 0.8},
+				           {1.0, 1.2, 1.4, 1.6, 1.8},
+				           {2.0, 2.2, 2.4, 2.6, 2.8}};
+		
+		//TASK 1: make an array that prints the string array array out row by row
+		print2DArray(names);
+		
+		//space out
+		System.out.println("");
+		System.out.println("");
+		
+		//TASK 2: make an array that turns everything into 1.0
+		printDoubles(allOnes2D(nums));
+	}
+
+	/**
+	 * this is supposed to print out the new array that you made earlier
+	 * @param allOnes2D
+	 */
+	public static void printDoubles(double[][] allOnes2D) 
+	{
+		// TODO Auto-generated method stub
+		
+		//make an int for a for loop
+		int i = 0;
+		
+		//make a for loop to look at every element
+		for (; i < allOnes2D.length; i++)
+		{
+			//begin the printing method
+			System.out.print("{");
+		
+			//make a loop to look at every element in the current element
+			for(int k = 0; k < allOnes2D[0].length - 1; k++)
+			{
+				//print out the current element in the current element (lmao)
+				System.out.print(allOnes2D[i][k] + ", ");
+			}
+			
+			//end the current line of the printing method
+			System.out.println(allOnes2D[allOnes2D.length - 1][allOnes2D[0].length - 1] + "}");
+		}
+	}
+	
+	/**
+	 * this is supposed to turn all the elements into 1.0
+	 * this all starts with a completely blank array with 0.0 everywhere
+	 * @param nums
+	 * @return
+	 */
+	public static double[][] allOnes2D(double[][] nums) 
+	{
+		// TODO Auto-generated method stub
+		//make a new double full of 0.0 with the same amount of elements in it
+		double[][] copyArr = new double[nums.length][nums[0].length];
+		
+		//make an int to traverse through the for loops
+		int i = 0;
+		
+		//make a for loop to look through every element
+		for (; i < nums.length; i++)
+		{
+			//make a for loop to look at every element in the current element (lmao)
+			for(int k = 0; k < nums[0].length; k++)
+			{
+				//turn the current element in the element (lmao) into 1.0
+				copyArr[i][k] = 1.0;
+			}
+		}
+		//return the new double 2d array
+		return copyArr;
+	}
+
+	/**
+	 * this is supposed to print out the strings in a row-major order
+	 * what that means is that we'll print each array from left to right
+	 * @param names
+	 */
+	public static void print2DArray(String[][] names) 
+	{
+		// TODO Auto-generated method stub
+		//make a for loop to look at every element
+		for (int i  = 0; i < names.length; i++)
+		{
+			//make a for loop to look at every element in the current element (lmao)
+			for (int k = 0; k < names[0].length; k++)
+			{
+				//print the current element in the element (lmao)
+				System.out.print(names[i][k] + " ");
+			}
+			//indent to make the next line
+			System.out.println("");
+		}
+	}
+	
+}
