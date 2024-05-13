@@ -1,0 +1,51 @@
+//import a scanner for tasks 3-6
+import java.util.Scanner;
+/**
+ * today we'll learn about recursions, where a method calls itself to run again if something happens
+ * TASK 1: Make a class called ChatBot with a main method
+ */
+public class ChatBot 
+{
+
+	public static void main(String[] args)
+	{
+		
+		//TASK 2: in the main method, call a method stupidNumberSayer(). 
+		//the method should be static, void, and have no formal parameters
+		stupidNumberSayer();
+	}
+
+	/**
+	 * this is the stupid number sayer
+	 * says which number is stupid and which one isn't
+	 */
+	public static void stupidNumberSayer() 
+	{
+		// TODO Auto-generated method stub
+		//the rest of the tasks will be done in here
+		//TASK 3: open a scanner object
+		Scanner number = new Scanner(System.in);
+		
+		//TASK 4: allow the user to enter a number using .nextInt() method in the Scanner class
+		int IsStupid = number.nextInt();
+		
+		//TASK 5: Check if number entered was "777" and print "That's a good number!"
+		//also, despite what the notes say, don't recur here because you'll get an error		
+		if (IsStupid == 777)
+		{
+			System.out.println("That's a good number!");
+			number.close();
+		}
+		
+		//TASK 6: if the number entered was not "777" then tell them "That's a stupid number!"
+		//also, despite what the notes say, don't close the scanner or else you'll get an error
+		else
+		{
+			System.out.println("That's a stupid number!");
+			
+			//make a recursion to make sure the user puts in the right number next time
+			stupidNumberSayer();
+		}
+	}
+	
+}
